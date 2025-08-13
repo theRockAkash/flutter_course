@@ -36,9 +36,15 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    //call our code
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: Center(child: Text("")));
+  }
+  @override
+  void dispose() {
+     // clean the resources
+    super.dispose();
   }
 }
