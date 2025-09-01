@@ -13,9 +13,13 @@ class ContainerScreen extends StatelessWidget {
         width: double.infinity,
         height: 100,
         padding: EdgeInsets.all(16),
-        child: Container( 
-        decoration: BoxDecoration(color: Colors.pinkAccent.withAlpha(100),border: Border.all(color: Colors.pinkAccent,width: 1),
-            borderRadius: BorderRadius.circular(12)),),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.pinkAccent.withAlpha(100),
+            border: Border.all(color: Colors.pinkAccent, width: 1),
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
       ),
     );
   }

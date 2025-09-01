@@ -17,11 +17,7 @@ class StackRowColumnScreen extends StatelessWidget {
             height: 300,
             margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           ),
-          Positioned(
-            top: 16,
-            right: 16,
-            child: Column(children: [Box(), Box()]),
-          ),
+          Positioned(top: 16, right: 16, child: Column(children: [Box(), Box()])),
 
           Positioned(
             bottom: 16,
@@ -47,18 +43,12 @@ class StackRowColumnScreen extends StatelessWidget {
                         Container(
                           color: Colors.grey.shade800,
                           height: 24,
-                          margin: EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 8,
-                          ),
+                          margin: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                         ),
                         Container(
                           color: Colors.grey.shade800,
                           height: 24,
-                          margin: EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 8,
-                          ),
+                          margin: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                         ),
                       ],
                     ),
