@@ -24,6 +24,7 @@ class _SetStateScreenState extends State<SetStateScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print("==========> build method executed");
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //

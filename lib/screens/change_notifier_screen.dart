@@ -6,6 +6,7 @@ class ChangeNotifierScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("========> Build Executed");
     final Counter counter = Counter();
     return Scaffold(
       appBar: AppBar(title: Text("ChangeNotifier Counter")),

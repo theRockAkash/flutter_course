@@ -15,7 +15,7 @@ class StreamBuilderScreen extends StatelessWidget {
       body: Center(
         child: StreamBuilder<int>(
           stream: controller.stream,
-          initialData: count,
+          initialData: 0,
           builder: (_, snapshot) =>
               Text("Count: ${snapshot.data}", style: TextStyle(fontSize: 24)),
         ),
