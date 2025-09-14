@@ -29,7 +29,7 @@ class NamedHomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(
                   context,
-                  AppScreens.secondScreen,
+                  '/ds',
                   arguments: "📦 Data via arguments",
                 );
               },

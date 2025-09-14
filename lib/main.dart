@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'material_page_routes/home_screen.dart';
 import 'material_page_routes/second_screen.dart';
 
-// 3 navigation styles without libraries:
+// 2 navigation styles without libraries:
 //
 // Direct MaterialPageRoute → quick & flexible
 //
 // Named Routes (routes: {}) → centralized & clean
 //
-// onGenerateRoute → centralized + arguments support
+// onGenerateRoute → used in named routes
 
 void main() {
   runApp( MyApp());
@@ -32,9 +32,11 @@ class MyApp extends StatelessWidget {
       title: 'Navigation Example',
       debugShowCheckedModeBanner: false,
       routes: {
+     //   '/': (context) => HomeScreen(),
         '/second': (context) => SecondScreen(),
       },
       onGenerateRoute: (settings) {
+        debugPrint("=============>onGenerateRoute : ${settings.name}");
         if (settings.name == '/generate') {
           final person = settings.arguments as Person?;
           return MaterialPageRoute(
@@ -42,6 +44,10 @@ class MyApp extends StatelessWidget {
           );
         }
         return null;
+      },
+      onUnknownRoute: (settings) {
+        debugPrint("=============>onUnknownRoute : ${settings.name}");
+        return MaterialPageRoute(builder: (context) =>Scaffold(body: Center(child: Text("404")),) ,);
       },
       home: HomeScreen(),
     );

@@ -56,6 +56,7 @@ class HomeScreen extends StatelessWidget {
                   '/second',
                   arguments: personData,
                 );
+                debugPrint("=============> End of Function");
                 if (context.mounted) {
                   showResult(context, result);
                 }
@@ -66,11 +67,13 @@ class HomeScreen extends StatelessWidget {
             ElevatedButton(
               child: Text("onGenerateRoute with Arguments"),
               onPressed: () {
-                Navigator.pushNamed(context, '/generate', arguments: personData,).then((result) {
+                Navigator.pushNamed(context, '/generate1', arguments: personData,)
+                    .then((result) {
                   if (context.mounted) {
                     showResult(context, result);
                   }
                 });
+                debugPrint("=============> End of Function");
               },
             ),
           ],

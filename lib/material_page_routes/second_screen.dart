@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../main.dart';
 class SecondScreen extends StatelessWidget {
   final Person? person;
-  const SecondScreen({this.person});
+  const SecondScreen({super.key, this.person});
 
   @override
   Widget build(BuildContext context) {

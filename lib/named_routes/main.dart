@@ -19,15 +19,10 @@ class MyApp extends StatelessWidget {
       // Register routes
       routes: appRoutes,
       initialRoute: AppScreens.home,
-      onGenerateRoute: (settings) {
-        print("========> Unknown Route: ${settings.name}");
-        if (appRoutes[settings.name] == null) {
-          final message = settings.arguments as String?;
-          return MaterialPageRoute(
-            builder: (_) => NotFoundScreen(message: message),
-          );
-        }
-        return null;
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (_) => NotFoundScreen(),
+        );
       },
     );
   }
