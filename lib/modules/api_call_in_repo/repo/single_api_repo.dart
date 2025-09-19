@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter_course/api/ui_state.dart';
 import 'package:http/http.dart' as http;
 
-import '../../../data/category_item.dart';
+import '../../../common/models/category_item.dart';
 import '../../../utils/constants.dart';
 
 /// @Created by akash on 15-09-2025.

@@ -10,5 +10,6 @@ class AppScreens{
  static const widgetAPICallCase4 = '/widget_api_call_case4';
  static const widgetAPICallCase5 = '/widget_api_call_case5';
  static const widgetAPICallCase6 = '/widget_api_call_case6';
+ static const standardAPICall = '/standard_api_call';
 
 }

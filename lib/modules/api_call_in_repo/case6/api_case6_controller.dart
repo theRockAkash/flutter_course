@@ -1,7 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_course/api/ui_state.dart';
-import 'package:flutter_course/di/reactives.dart';
 
-import '../../../data/category_item.dart';
+import '../../../common/models/category_item.dart';
 import '../repo/single_api_repo.dart';
 
 /// @Created by akash on 15-09-2025.
@@ -13,7 +13,7 @@ class ApiCallCase6Controller {
   }
 
   final repo = SingleApiRepo();
-  Rx<UiState<List<CategoryItem>>> categoryListState = Rx(UiState.none());
+  ValueNotifier<UiState<List<CategoryItem>>> categoryListState = ValueNotifier(UiState.none());
 
   Future<void> getCategoryList() async {
     repo.getCategoryList(

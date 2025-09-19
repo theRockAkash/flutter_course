@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_course/data/category_item.dart';
+import 'package:flutter_course/common/models/category_item.dart';
 import 'package:flutter_course/utils/constants.dart';
 import 'package:flutter_course/widgets/loader.dart';
 import 'package:http/http.dart' as http;
@@ -10,7 +10,8 @@ import '../../../widgets/category_list_widget.dart';
 
 /// @Created by akash on 15-09-2025.
 /// Know more about author at https://akash.cloudemy.in
-
+///
+/// All code in single file - widget, apis, data
 class WidgetApiCallScreen extends StatefulWidget {
   const WidgetApiCallScreen({super.key});
 

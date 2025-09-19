@@ -1,6 +1,8 @@
 import 'package:flutter_course/modules/api_call_in_widget/case1/widget_api_call_screen.dart';
 import 'package:flutter_course/modules/api_call_in_widget/case2/widget_api_call_case2_screen.dart';
 import 'package:flutter_course/modules/home/home_screen.dart';
+import 'package:flutter_course/modules/standard/ui/standard_api_controller.dart';
+import 'package:flutter_course/modules/standard/ui/standard_api_screen.dart';
 
 import '../modules/api_call_in_controller/case3/widget_api_call_case3_screen.dart';
 import '../modules/api_call_in_controller/case4/widget_api_call_case4_screen.dart';
@@ -28,7 +30,10 @@ final appRoutes = {
   AppScreens.widgetAPICallCase5: (context) {
     return WidgetApiCallCase5Screen();
   },
- AppScreens.widgetAPICallCase6: (context) {
+  AppScreens.widgetAPICallCase6: (context) {
     return WidgetApiCallCase6Screen();
+  },
+  AppScreens.standardAPICall: (context) {
+    return StandardApiScreen(controller: StandardApiController());
   },
 };

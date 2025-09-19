@@ -6,6 +6,9 @@ import 'api_call_case3_controller.dart';
 
 /// @Created by akash on 15-09-2025.
 /// Know more about author at https://akash.cloudemy.in
+
+/// Don't write All code in single file - widget, apis, data
+/// instead make controller to hold data and api related code
 class WidgetApiCallCase3Screen extends StatefulWidget {
   const WidgetApiCallCase3Screen({super.key});
 
@@ -32,7 +35,7 @@ class _WidgetApiCallCase3ScreenState extends State<WidgetApiCallCase3Screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Widget API Call Case 3 Example")),
+      appBar: AppBar(title: Text("Controller API Call Case 3 Example")),
       // isLoading?CustomLoader():categoryList!=null?CategoryListWidget(list:categoryList!):Text(error ?? "Invalid State")
       body: Column(
         children: [

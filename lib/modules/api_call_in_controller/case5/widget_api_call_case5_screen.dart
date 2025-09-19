@@ -7,6 +7,9 @@ import 'api_case5_controller.dart';
 /// @Created by akash on 15-09-2025.
 /// Know more about author at https://akash.cloudemy.in
 
+/// Don't create isLoading, error, and data, to hold different state of single Api
+/// Instead use UiState sealed class to manage network or Ui State in single variable
+
 class WidgetApiCallCase5Screen extends StatelessWidget {
   WidgetApiCallCase5Screen({super.key});
 
@@ -15,7 +18,7 @@ class WidgetApiCallCase5Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Widget API Call Case 5 Example")),
+      appBar: AppBar(title: Text("Controller API Call Case 5 Example")),
       // isLoading?CustomLoader():categoryList!=null?CategoryListWidget(list:categoryList!):Text(error ?? "Invalid State")
       body: controller.categoryListState.onChange(
         builder: (value) {

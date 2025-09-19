@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
               },
               child: Text("API call in Controller"),
             ),
-           SizedBox(height: 16),
+            SizedBox(height: 16),
             FilledButton(
               onPressed: () {
                 Navigator.pushNamed(context, AppScreens.widgetAPICallCase4);
@@ -52,11 +52,18 @@ class HomeScreen extends StatelessWidget {
             ),
             SizedBox(height: 16),
             FilledButton(
-              onPressed: () { Navigator.pushNamed(context, AppScreens.widgetAPICallCase6);},
+              onPressed: () {
+                Navigator.pushNamed(context, AppScreens.widgetAPICallCase6);
+              },
               child: Text("API call in Single Repo"),
             ),
             SizedBox(height: 16),
-            FilledButton(onPressed: () {}, child: Text("Standard API call")),
+            FilledButton(
+              onPressed: () {
+                Navigator.pushNamed(context, AppScreens.standardAPICall);
+              },
+              child: Text("Standard API call"),
+            ),
           ],
         ),
       ),
