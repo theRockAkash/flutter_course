@@ -11,20 +11,20 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IntrinsicHeight(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Image.network(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Expanded(
+          child: Image.network(
             item.images?.firstOrNull ?? "",
             errorBuilder: (context, error, stackTrace) => CircleAvatar(),
           ),
-          Text("\$${item.price}" ),
-          Text(item.title ?? "",maxLines: 1,overflow: TextOverflow.ellipsis, ),
-          Text(item.category?.name ?? "",maxLines: 1,overflow: TextOverflow.ellipsis),
-        ],
-      ),
+        ),
+        Text("\$${item.price}" ),
+        Text(item.title ?? "",maxLines: 1,overflow: TextOverflow.ellipsis, ),
+        Text(item.category?.name ?? "",maxLines: 1,overflow: TextOverflow.ellipsis),
+      ],
     );
   }
 }
