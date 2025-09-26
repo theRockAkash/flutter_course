@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course/modules/standard/models/product.dart';
+
+import '../modules/home/models/product.dart';
 
 /// @Created by akash on 19-09-2025.
 /// Know more about author at https://akash.cloudemy.in

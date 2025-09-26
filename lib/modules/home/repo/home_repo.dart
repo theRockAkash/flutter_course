@@ -1,17 +1,19 @@
-import 'package:flutter_course/api/get_connect_api_client.dart';
-import 'package:flutter_course/modules/standard/models/product.dart';
 
+
+import '../../../api/api_client.dart';
 import '../../../api/ui_state.dart';
 import '../../../common/models/category_item.dart';
+import '../../../di/reactives.dart';
 import '../../../utils/error_helper.dart';
 import '../../../utils/network_manager.dart';
+import '../models/product.dart';
 
 /// @Created by akash on 19-09-2025.
 /// Know more about author at https://akash.cloudemy.in
 
-class StandardApiRepo {
+class HomeRepo {
   Future<void> getCategoryList({
-    required Function(UiState<List<CategoryItem>>) callback,
+    required Function(UiStateList<CategoryItem>) callback,
   }) async {
     callback.call(UiState.loading());
 
@@ -20,7 +22,7 @@ class StandardApiRepo {
       return;
     }
 
-    final res = await GetConnectApiClient.instance.getCategories();
+    final res = await ApiClient.instance.getCategories();
 
     if (res.isOk) {
       try {
@@ -40,7 +42,7 @@ class StandardApiRepo {
   Future<void> getProducts({
     required int offset,
     int limit = 10,
-    required Function(UiState<List<Product>>) callback,
+    required Function(UiStateList<Product>) callback,
   }) async {
     callback.call(UiState.loading());
 
@@ -49,7 +51,7 @@ class StandardApiRepo {
       return;
     }
 
-    final res = await GetConnectApiClient.instance.getProducts(offset, limit);
+    final res = await ApiClient.instance.getProducts(offset, limit);
 
     if (res.isOk) {
       try {

@@ -1,4 +1,6 @@
-import 'package:flutter_course/modules/standard/repo/standard_api_repo.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_course/di/base_controller.dart';
+import 'package:flutter_course/modules/home/repo/home_repo.dart';
 
 import '../../../api/ui_state.dart';
 import '../../../common/models/category_item.dart';
@@ -8,17 +10,30 @@ import '../models/product.dart';
 /// @Created by akash on 19-09-2025.
 /// Know more about author at https://akash.cloudemy.in
 
-class StandardApiController {
-  StandardApiController() {
-    getCategoryList();
-    getProducts();
-  }
-
-  final repo = StandardApiRepo();
+class HomeController extends BaseController{
+  final repo = HomeRepo();
 
   Rx<UiState<List<CategoryItem>>> categoryListState = Rx(UiState.none());
+
   Rx<UiState<List<Product>>> productListState = Rx(UiState.none());
 
+ // RxUiState<List<Product>> productListState2 = Rx(UiState.none());
+
+ // RxUiStateList<Product> productListState3 = Rx(UiState.none());
+
+
+  @override
+  void onInit() {
+    debugPrint("==============> do something when constructor is called");
+
+  }
+
+  @override
+  void onReady() {
+    getCategoryList();
+    getProducts();
+    super.onReady();
+  }
   Future<void> getCategoryList() async {
     repo.getCategoryList(
       callback: (state) {
@@ -37,8 +52,10 @@ class StandardApiController {
     );
   }
 
-  void dispose() {
+  @override
+  void onDispose() {
     categoryListState.dispose();
     productListState.dispose();
+    super.onDispose();
   }
 }

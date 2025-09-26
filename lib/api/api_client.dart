@@ -7,18 +7,18 @@ import '../utils/printer.dart';
 /// @Created by akash on 15-09-2025.
 /// Know more about author at https://akash.cloudemy.in
 
-class GetConnectApiClient extends GetConnect with Printer {
-  GetConnectApiClient._() {
+class ApiClient extends GetConnect with Printer {
+  ApiClient._() {
     onInit();
   }
 
-  static GetConnectApiClient? _instance;
+  static ApiClient? _instance;
 
-  static GetConnectApiClient get instance {
+  static ApiClient get instance {
     if (_instance != null) {
       return _instance!;
     } else {
-      _instance = GetConnectApiClient._();
+      _instance = ApiClient._();
       return _instance!;
     }
   }

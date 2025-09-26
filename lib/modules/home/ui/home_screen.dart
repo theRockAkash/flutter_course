@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course/modules/standard/models/product.dart';
-import 'package:flutter_course/modules/standard/ui/standard_api_controller.dart';
+import 'package:flutter_course/di/controller_store.dart';
+import 'package:flutter_course/modules/home/ui/home_controller.dart';
 
+import '../../../routes/app_screens.dart';
 import '../../../widgets/category_grid_widget.dart';
 import '../../../widgets/loader.dart';
 import '../../../widgets/product_card.dart';
+import '../models/product.dart';
 
 /// @Created by akash on 19-09-2025.
 /// Know more about author at https://akash.cloudemy.in
 
-class StandardApiScreen extends StatelessWidget {
-  const StandardApiScreen({super.key, required this.controller});
+class HomeScreen extends StatelessWidget {
+  HomeScreen({super.key});
 
-  final StandardApiController controller;
+  final HomeController controller = ControllerStore.find<HomeController>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Standard API Example")),
       body: RefreshIndicator(
-         onRefresh: () => controller.getProducts(),
+        onRefresh: () => controller.getProducts(),
         child: ListView(
           children: [
             Padding(
@@ -57,9 +59,7 @@ class StandardApiScreen extends StatelessWidget {
                 return value.when(
                   success: (data) => productListWidget(list: data),
                   error: (err) => Text(err),
-                  loading: () => SizedBox(
-                    height: 250,
-                      child: CustomLoader()),
+                  loading: () => SizedBox(height: 250, child: CustomLoader()),
                   none: () => SizedBox(),
                 );
               },
@@ -82,7 +82,12 @@ class StandardApiScreen extends StatelessWidget {
         mainAxisSpacing: 8,
         crossAxisSpacing: 8,
       ),
-      itemBuilder: (context, index) => ProductCard(item: list[index]),
+      itemBuilder: (context, index) => InkWell(
+        onTap: () {
+          Navigator.pushNamed(context,AppScreens.productDetail);
+        },
+        child: ProductCard(item: list[index]),
+      ),
     );
   }
 }
