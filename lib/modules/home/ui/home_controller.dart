@@ -24,7 +24,7 @@ class HomeController extends BaseController{
 
   @override
   void onInit() {
-    debugPrint("==============> do something when constructor is called");
+   // debugPrint("==============> do something when constructor is called");
 
   }
 

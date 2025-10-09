@@ -21,7 +21,12 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Standard API Example")),
       body: RefreshIndicator(
-        onRefresh: () => controller.getProducts(),
+        onRefresh: () {
+         return Future.wait([
+          controller.getProducts(),
+          controller.getCategoryList()
+          ]);
+        },
         child: ListView(
           children: [
             Padding(

@@ -13,7 +13,7 @@ class CustomLoader extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           CircularProgressIndicator(),
-          Text("Loading")
+          Text("Loading...")
         ],
       ),
     );
