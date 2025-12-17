@@ -1,10 +1,9 @@
 
 import 'package:flutter_course/di/controller_store.dart';
-import 'package:flutter_course/modules/home/home_controller.dart';
-
-import '../modules/home/home_screen.dart';
-import '../modules/product/detail/product_detail_controller.dart';
-import '../modules/product/detail/product_detail_screen.dart';
+import '../presentation/home/home_controller.dart';
+import '../presentation/home/home_screen.dart';
+import '../presentation/product/detail/product_detail_controller.dart';
+import '../presentation/product/detail/product_detail_screen.dart';
 import 'app_screens.dart';
 
 /// @Created by akash on 15-09-2025.

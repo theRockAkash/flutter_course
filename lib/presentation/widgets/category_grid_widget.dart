@@ -9,7 +9,7 @@ import '../../data/models/category_item.dart';
 class CategoryGridWidget extends StatelessWidget {
   const CategoryGridWidget({super.key, required this.list});
 
-  final List<CategoryItem> list;
+  final List<Category> list;
 
   @override
   Widget build(BuildContext context) {

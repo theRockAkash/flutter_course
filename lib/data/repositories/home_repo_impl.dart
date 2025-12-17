@@ -11,9 +11,9 @@ import '../models/product.dart';
 /// @Created by akash on 19-09-2025.
 /// Know more about author at https://akash.cloudemy.in
 
-class HomeRepo {
+class HomeRepoImpl {
   Future<void> getCategoryList({
-    required Function(UiStateList<CategoryItem>) callback,
+    required Function(UiStateList<Category >) callback,
   }) async {
     callback.call(UiState.loading());
 
@@ -27,7 +27,7 @@ class HomeRepo {
     if (res.isOk) {
       try {
         final categories = (res.body as List<dynamic>)
-            .map((e) => CategoryItem.fromJson(e as Map<String, dynamic>))
+            .map((e) => Category.fromJson(e as Map<String, dynamic>))
             .toList();
         callback.call(UiState.success(categories));
       } catch (e) {

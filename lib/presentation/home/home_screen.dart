@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course/di/controller_store.dart';
-import 'package:flutter_course/modules/home/home_controller.dart';
 
-import '../../core/widgets/category_grid_widget.dart';
 import '../../core/widgets/loader.dart';
-import '../../core/widgets/product_card.dart';
 import '../../routes/app_screens.dart';
 import '../../data/models/product.dart';
+import '../widgets/category_grid_widget.dart';
+import '../widgets/product_card.dart';
+import 'home_controller.dart';
 
 /// @Created by akash on 19-09-2025.
 /// Know more about author at https://akash.cloudemy.in

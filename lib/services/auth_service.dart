@@ -24,7 +24,6 @@ class AuthService {
     if (token != null) {
       _currentUser = UserModel(
         id: 0,
-        name: '',
         email: '',
         token: token,
       );

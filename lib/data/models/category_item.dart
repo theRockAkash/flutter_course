@@ -5,16 +5,18 @@
 /// creationAt : "2025-09-15T06:19:55.000Z"
 /// updatedAt : "2025-09-15T06:19:55.000Z"
 
-class CategoryItem {
-  CategoryItem({
-      this.id, 
-      this.name, 
-      this.slug, 
-      this.image, 
-      this.creationAt, 
-      this.updatedAt,});
 
-  CategoryItem.fromJson(dynamic json) {
+
+class Category {
+  Category({
+    this.id,
+    this.name,
+    this.slug,
+    this.image,
+    this.creationAt,
+    this.updatedAt,});
+
+  Category.fromJson(dynamic json) {
     id = json['id'];
     name = json['name'];
     slug = json['slug'];
@@ -28,19 +30,19 @@ class CategoryItem {
   String? image;
   String? creationAt;
   String? updatedAt;
-  CategoryItem copyWith({  num? id,
-  String? name,
-  String? slug,
-  String? image,
-  String? creationAt,
-  String? updatedAt,
-}) => CategoryItem(  id: id ?? this.id,
-  name: name ?? this.name,
-  slug: slug ?? this.slug,
-  image: image ?? this.image,
-  creationAt: creationAt ?? this.creationAt,
-  updatedAt: updatedAt ?? this.updatedAt,
-);
+  Category copyWith({  num? id,
+    String? name,
+    String? slug,
+    String? image,
+    String? creationAt,
+    String? updatedAt,
+  }) => Category(  id: id ?? this.id,
+    name: name ?? this.name,
+    slug: slug ?? this.slug,
+    image: image ?? this.image,
+    creationAt: creationAt ?? this.creationAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+  );
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['id'] = id;

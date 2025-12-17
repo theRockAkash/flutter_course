@@ -1,6 +1,6 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart' hide Category;
+import 'package:flutter_course/data/repositories/home_repo_impl.dart';
 import 'package:flutter_course/di/base_controller.dart';
-import 'package:flutter_course/data/repositories/home_repo.dart';
 
 import '../../core/state/ui_state.dart';
 import '../../data/models/category_item.dart';
@@ -11,9 +11,9 @@ import '../../data/models/product.dart';
 /// Know more about author at https://akash.cloudemy.in
 
 class HomeController extends BaseController{
-  final repo = HomeRepo();
+  final repo = HomeRepoImpl();
 
-  Rx<UiState<List<CategoryItem>>> categoryListState = Rx(UiState.none());
+  Rx<UiState<List<Category>>> categoryListState = Rx(UiState.none());
 
   Rx<UiState<List<Product>>> productListState = Rx(UiState.none());
 
