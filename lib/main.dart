@@ -1,24 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course/routes/app_routes.dart';
-
-import 'di/controller_route_observer.dart';
+import 'app.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
-      ),
-      routes: appRoutes,
-      navigatorObservers: [ControllerRouteObserver()],
-    );
-  }
-}

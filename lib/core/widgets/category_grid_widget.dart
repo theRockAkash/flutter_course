@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../common/models/category_item.dart';
+import '../../data/models/category_item.dart';
+
 
 /// @Created by akash on 15-09-2025.
 /// Know more about author at https://akash.cloudemy.in

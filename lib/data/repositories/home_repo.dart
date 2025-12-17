@@ -1,11 +1,11 @@
 
 
-import '../../../api/api_client.dart';
-import '../../../api/ui_state.dart';
-import '../../../common/models/category_item.dart';
-import '../../../di/reactives.dart';
-import '../../../utils/error_helper.dart';
-import '../../../utils/network_manager.dart';
+import '../../core/network/api_client.dart';
+import '../../core/state/ui_state.dart';
+import '../models/category_item.dart';
+import '../../di/reactives.dart';
+import '../../core/utils/error_helper.dart';
+import '../../core/utils/network_manager.dart';
 import '../models/product.dart';
 
 /// @Created by akash on 19-09-2025.

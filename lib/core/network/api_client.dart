@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get_connect/connect.dart';
 
-import '../../../utils/constants.dart';
 import '../utils/printer.dart';
+import 'package:flutter_course/core/constants/app_constants.dart';
 
 /// @Created by akash on 15-09-2025.
 /// Know more about author at https://akash.cloudemy.in
@@ -31,8 +31,8 @@ class ApiClient extends GetConnect with Printer {
 
     // Add Authorization token to the default headers
     httpClient.addRequestModifier<dynamic>((request) {
-      /*  if (CommonController.to.userData?.token != null) {
-        request.headers['Authorization'] = 'Bearer ${CommonController.to.userData?.token}';
+      /*  if (AuthService.to.currentUser?.token != null) {
+        request.headers['Authorization'] = 'Bearer ${AuthService.to.currentUser?.token}';
       }*/
       if (kDebugMode) {
         printRequest(request);
@@ -42,7 +42,7 @@ class ApiClient extends GetConnect with Printer {
 
     httpClient.addResponseModifier((request, response) {
       /* if (response.statusCode == 401) {
-        CommonController.to.clearData(showLogin: true);
+        AuthService.to.logout();
       }*/
       if (kDebugMode) {
         printResponse(response, request);

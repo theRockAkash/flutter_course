@@ -2,7 +2,7 @@
 /// Know more about author at https://akash.cloudemy.in
 
 import 'package:flutter/material.dart';
-import 'package:flutter_course/api/ui_state.dart';
+import 'package:flutter_course/core/state/ui_state.dart';
 
 /// A reactive variable that notifies only its listeners
 class Rx<T> extends ValueNotifier<T> {
