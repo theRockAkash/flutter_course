@@ -3,6 +3,7 @@ import 'package:flutter_course/screens/card_screen.dart';
 import 'package:flutter_course/screens/column_row_screen.dart';
 import 'package:flutter_course/screens/columns_screen.dart';
 import 'package:flutter_course/screens/container_screen.dart';
+import 'package:flutter_course/screens/custom_screen.dart';
 import 'package:flutter_course/screens/horizontal_grid_screen.dart';
 import 'package:flutter_course/screens/horizontal_list_screen.dart';
 import 'package:flutter_course/screens/row_column_screen.dart';
@@ -39,6 +40,7 @@ class DashboardScreen extends StatelessWidget {
 }
 
 enum Screens {
+  custom("Custom", CustomScreen()),
   container("Containers", ContainerScreen()),
   card("Cards", CardScreen()),
   column("Columns", ColumnsScreen()),
