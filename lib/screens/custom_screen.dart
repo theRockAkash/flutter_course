@@ -183,10 +183,36 @@ class CustomScreen extends StatelessWidget {
                     buildDateCircle("12"),
                     buildDateCircle("13"),
                     buildDateCircle("14"),
-                    buildDateCircle("15",color: Colors.pinkAccent.shade100),
+                    buildDateCircle("15", color: Colors.pinkAccent.shade100),
                     buildDateCircle("16"),
                     buildDateCircle("17"),
                     buildDateCircle("18"),
+                  ],
+                ),
+                SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    buildPersonCircle(
+                      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800",
+                      icon: Icons.check,
+                      color: Colors.green,
+                    ),
+                    buildPersonCircle(
+                      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800",
+                    ),
+                    buildPersonCircle(
+                      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800",
+                    ),
+                    buildPersonCircle(
+                      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800",
+                    ),
+                    buildPersonCircle(
+                      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800",
+                    ),
+                    buildPersonCircle(
+                      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800",
+                    ),
                   ],
                 ),
               ],
@@ -197,14 +223,27 @@ class CustomScreen extends StatelessWidget {
     );
   }
 
-  Widget buildDateCircle(String date, {Color color=Colors.white}) {
+  Widget buildDateCircle(String date, {Color color = Colors.white}) {
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.grey.shade300,
+        border: Border.all(color: Colors.grey.shade300, width: 1),
       ),
-      padding: EdgeInsets.all(1),
       child: CircleAvatar(backgroundColor: color, child: Text(date)),
+    );
+  }
+
+  Widget buildPersonCircle(
+    String url, {
+    IconData icon = Icons.lock,
+    Color color = Colors.black,
+  }) {
+    return Badge(
+      label: Icon(icon, size: 10, color: Colors.white),
+      alignment: Alignment.bottomRight,
+      offset: Offset(0, -13),
+      backgroundColor: color,
+      child: CircleAvatar(backgroundImage: NetworkImage(url)),
     );
   }
 
