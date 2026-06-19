@@ -42,7 +42,9 @@ class DashboardScreen extends StatelessWidget {
 }
 
 enum Screens {
-  custom("Custom", HomeScreen()),
+  home("Home", HomeScreen()),
+  custom("Custom", CustomScreen()),
+  splash("Splash", SplashScreen()),
   container("Containers", ContainerScreen()),
   card("Cards", CardScreen()),
   column("Columns", ColumnsScreen()),
