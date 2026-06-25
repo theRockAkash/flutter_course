@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'dashboard_screen.dart';
+import 'modules/home/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple,surfaceTint: Colors.white),
       ),
 
-      home: const DashboardScreen(),
+      home:  HomeScreen(),
     );
   }
 }

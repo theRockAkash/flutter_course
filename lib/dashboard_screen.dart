@@ -44,7 +44,7 @@ class DashboardScreen extends StatelessWidget {
 
 enum Screens {
   productDetails("Product Details", ProductDetailScreen(item: {},)),
-  home("Home", HomeScreen()),
+  //home("Home", HomeScreen()),
   custom("Custom", CustomScreen()),
   splash("Splash", SplashScreen()),
   container("Containers", ContainerScreen()),

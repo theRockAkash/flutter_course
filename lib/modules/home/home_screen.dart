@@ -1,53 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_course/modules/home/home_viewmodel.dart';
 import 'package:flutter_course/modules/product/product_detail_screen.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  final productList = const [
-    {
-      "title": "Cheese Burger",
-      "subTitle": "Wendy's Burger",
-      "url":
-          "https://i.pinimg.com/736x/91/31/c7/9131c729d733bd3ac5eb73b87f13ab12.jpg",
-    },
-    {
-      "title": "Extra Cheese Burger",
-      "subTitle": "Zomato's Burger",
-      "url":
-          "https://cdn.uengage.io/uploads/6670/image-668741-1756452005.jpeg",
-    },
-    {
-      "title": "Cheese Burger",
-      "subTitle": "Wendy's Burger",
-      "url":
-          "https://i.pinimg.com/736x/91/31/c7/9131c729d733bd3ac5eb73b87f13ab12.jpg",
-    },
-    {
-      "title": "Cheese Burger",
-      "subTitle": "Wendy's Burger",
-      "url":
-          "https://i.pinimg.com/736x/91/31/c7/9131c729d733bd3ac5eb73b87f13ab12.jpg",
-    },
-    {
-      "title": "Cheese Burger",
-      "subTitle": "Wendy's Burger",
-      "url":
-          "https://i.pinimg.com/736x/91/31/c7/9131c729d733bd3ac5eb73b87f13ab12.jpg",
-    },
-    {
-      "title": "Cheese Burger",
-      "subTitle": "Wendy's Burger",
-      "url":
-          "https://i.pinimg.com/736x/91/31/c7/9131c729d733bd3ac5eb73b87f13ab12.jpg",
-    },
-    {
-      "title": "Cheese Burger",
-      "subTitle": "Wendy's Burger",
-      "url":
-          "https://i.pinimg.com/736x/91/31/c7/9131c729d733bd3ac5eb73b87f13ab12.jpg",
-    },
-  ];
+class HomeScreen extends StatelessWidget  with HomeViewmodel {
+   HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
