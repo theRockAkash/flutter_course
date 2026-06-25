@@ -1,7 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_course/modules/product/product_detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
+  final productList = const [
+    {
+      "title": "Cheese Burger",
+      "subTitle": "Wendy's Burger",
+      "url":
+          "https://i.pinimg.com/736x/91/31/c7/9131c729d733bd3ac5eb73b87f13ab12.jpg",
+    },
+    {
+      "title": "Extra Cheese Burger",
+      "subTitle": "Zomato's Burger",
+      "url":
+          "https://cdn.uengage.io/uploads/6670/image-668741-1756452005.jpeg",
+    },
+    {
+      "title": "Cheese Burger",
+      "subTitle": "Wendy's Burger",
+      "url":
+          "https://i.pinimg.com/736x/91/31/c7/9131c729d733bd3ac5eb73b87f13ab12.jpg",
+    },
+    {
+      "title": "Cheese Burger",
+      "subTitle": "Wendy's Burger",
+      "url":
+          "https://i.pinimg.com/736x/91/31/c7/9131c729d733bd3ac5eb73b87f13ab12.jpg",
+    },
+    {
+      "title": "Cheese Burger",
+      "subTitle": "Wendy's Burger",
+      "url":
+          "https://i.pinimg.com/736x/91/31/c7/9131c729d733bd3ac5eb73b87f13ab12.jpg",
+    },
+    {
+      "title": "Cheese Burger",
+      "subTitle": "Wendy's Burger",
+      "url":
+          "https://i.pinimg.com/736x/91/31/c7/9131c729d733bd3ac5eb73b87f13ab12.jpg",
+    },
+    {
+      "title": "Cheese Burger",
+      "subTitle": "Wendy's Burger",
+      "url":
+          "https://i.pinimg.com/736x/91/31/c7/9131c729d733bd3ac5eb73b87f13ab12.jpg",
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            Text("Order your favourite food!", style: TextStyle(fontSize: 12))
+            Text("Order your favourite food!", style: TextStyle(fontSize: 12)),
           ],
         ),
         actionsPadding: EdgeInsets.only(right: 16),
@@ -37,7 +83,8 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: TextField(
-                    onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
+                    onTapOutside: (event) =>
+                        FocusManager.instance.primaryFocus?.unfocus(),
                     decoration: InputDecoration(
                       labelText: "Search",
                       isDense: true,
@@ -52,6 +99,130 @@ class HomeScreen extends StatelessWidget {
                 IconButton.filled(onPressed: () {}, icon: Icon(Icons.tune)),
               ],
             ),
+          ),
+          SizedBox(height: 16),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                SizedBox(width: 16),
+                ChoiceChip(
+                  label: Text("All"),
+                  selected: true,
+                  showCheckmark: false,
+                  selectedColor: Colors.red,
+                  labelStyle: TextStyle(color: Colors.white),
+                  checkmarkColor: Colors.white,
+                ),
+                SizedBox(width: 8),
+                ChoiceChip(
+                  label: Text("Combos"),
+                  selected: false,
+                  color: WidgetStatePropertyAll(Colors.grey.shade300),
+                ),
+                SizedBox(width: 8),
+                ChoiceChip(
+                  label: Text("Combos"),
+                  selected: false,
+                  color: WidgetStatePropertyAll(Colors.grey.shade300),
+                ),
+                SizedBox(width: 8),
+                ChoiceChip(
+                  label: Text("Combos"),
+                  selected: false,
+                  color: WidgetStatePropertyAll(Colors.grey.shade300),
+                ),
+                SizedBox(width: 8),
+                ChoiceChip(
+                  label: Text("Combos"),
+                  selected: false,
+                  color: WidgetStatePropertyAll(Colors.grey.shade300),
+                ),
+                SizedBox(width: 8),
+                ChoiceChip(
+                  label: Text("Combos"),
+                  selected: false,
+                  color: WidgetStatePropertyAll(Colors.grey.shade300),
+                ),
+                SizedBox(width: 16),
+              ],
+            ),
+          ),
+          Expanded(
+            child: GridView.builder(
+              itemCount: productList.length,
+              padding: EdgeInsets.all(16),
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 200,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+                mainAxisExtent: 205,
+              ),
+              itemBuilder: (context, index) {
+                final item = productList[index];
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ProductDetailScreen(item:item),
+                      ),
+                    );
+                  },
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Center(
+                            child: Image.network(item["url"] ?? "", height: 120),
+                          ),
+                          Text(
+                            item["title"] ?? "",
+                            style: TextStyle(fontWeight: FontWeight.w600),
+                          ),
+                          Text(item["subTitle"]!, style: TextStyle(fontSize: 12)),
+                  
+                          Row(
+                            children: [
+                              Icon(Icons.star, color: Colors.orange, size: 14),
+                              Text("4.5", style: TextStyle(fontSize: 12)),
+                              Spacer(),
+                              Icon(Icons.favorite_border, size: 20),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        unselectedItemColor: Colors.red.shade100,
+        selectedItemColor: Colors.white,
+        backgroundColor: Colors.red,
+        type: BottomNavigationBarType.fixed,
+        showUnselectedLabels: true,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: "Favorites",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: "Cart",
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: "Settings",
           ),
         ],
       ),

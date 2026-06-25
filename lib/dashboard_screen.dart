@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_course/modules/home/custom_screen.dart';
 import 'package:flutter_course/modules/home/home_screen.dart';
+import 'package:flutter_course/modules/product/product_detail_screen.dart';
+import 'package:flutter_course/modules/splash/splash_screen.dart';
 import 'package:flutter_course/screens/card_screen.dart';
 import 'package:flutter_course/screens/column_row_screen.dart';
 import 'package:flutter_course/screens/columns_screen.dart';
 import 'package:flutter_course/screens/container_screen.dart';
-import 'package:flutter_course/modules/home/custom_screen.dart';
 import 'package:flutter_course/screens/horizontal_grid_screen.dart';
 import 'package:flutter_course/screens/horizontal_list_screen.dart';
 import 'package:flutter_course/screens/row_column_screen.dart';
 import 'package:flutter_course/screens/rows_screen.dart';
-import 'package:flutter_course/modules/splash/splash_screen.dart';
 import 'package:flutter_course/screens/stack_row_column_screen.dart';
 import 'package:flutter_course/screens/stack_screen.dart';
 import 'package:flutter_course/screens/vertical_grid_screen.dart';
@@ -42,6 +43,7 @@ class DashboardScreen extends StatelessWidget {
 }
 
 enum Screens {
+  productDetails("Product Details", ProductDetailScreen(item: {},)),
   home("Home", HomeScreen()),
   custom("Custom", CustomScreen()),
   splash("Splash", SplashScreen()),
